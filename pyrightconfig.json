@@ -1,0 +1,16 @@
+{
+  "pythonVersion": "3.11",
+  "pythonPlatform": "Windows",
+  "venvPath": ".",
+  "venv": ".venv",
+  "extraPaths": ["backend", "."],
+  "executionEnvironments": [
+    {
+      "root": "backend",
+      "extraPaths": ["."]
+    }
+  ],
+  "typeCheckingMode": "basic",
+  "include": ["backend", "src"],
+  "exclude": ["dist", "node_modules", ".venv", "data"]
+}

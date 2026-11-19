@@ -1,0 +1,38 @@
+# ──────────────────────────────────────────────
+#  Offline VS Code AI Assistant — Backend Deps
+#  Python 3.11+  |  pip install -r requirements.txt
+# ──────────────────────────────────────────────
+
+# Web framework & server
+fastapi==0.111.0
+uvicorn==0.30.1
+
+# HTTP client (async, for Ollama calls)
+httpx==0.27.0
+
+# Data validation & settings
+pydantic==2.7.1
+pydantic-settings==2.3.1
+
+# Server-Sent Events (streaming chat)
+sse-starlette==2.1.0
+
+# Environment variable loading
+python-dotenv==1.0.1
+
+# Vector store (local FAISS — CPU build)
+faiss-cpu==1.8.0
+
+# Numerical operations (FAISS dependency)
+numpy==1.26.4
+
+# Code parsing / chunking (RAG indexing)
+tree-sitter==0.22.3
+tree-sitter-python==0.21.0
+tree-sitter-cpp==0.22.0
+
+# File system watcher (incremental re-indexing)
+watchdog==4.0.1
+
+# Metadata database
+sqlite-utils==3.36

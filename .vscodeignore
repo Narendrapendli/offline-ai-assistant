@@ -1,0 +1,15 @@
+.vscode/**
+.vscode-test/**
+node_modules/**
+.gitignore
+.yarnrc
+.prettierrc
+tsconfig.json
+webpack.config.js
+**/*.map
+**/*.ts
+backend/**
+data/**
+.venv/**
+.env
+__pycache__/**

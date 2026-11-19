@@ -1,0 +1,5 @@
+[tool.ruff]
+src = ["backend", "src"]
+
+[tool.ruff.lint]
+select = ["E", "F"]

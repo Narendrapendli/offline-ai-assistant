@@ -1,0 +1,350 @@
+{
+    "version": "1.1.408",
+    "time": "1773798640182",
+    "generalDiagnostics": [
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\ast_analysis\\ast_parser.py",
+            "severity": "error",
+            "message": "Argument of type \"object\" cannot be assigned to parameter \"ptr\" of type \"_Ptr\" in function \"__init__\"\n  \"object\" is not assignable to \"int\"",
+            "range": {
+                "start": {
+                    "line": 32,
+                    "character": 52
+                },
+                "end": {
+                    "line": 32,
+                    "character": 81
+                }
+            },
+            "rule": "reportArgumentType"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\ast_analysis\\ast_parser.py",
+            "severity": "error",
+            "message": "Argument of type \"object\" cannot be assigned to parameter \"ptr\" of type \"_Ptr\" in function \"__init__\"\n  \"object\" is not assignable to \"int\"",
+            "range": {
+                "start": {
+                    "line": 36,
+                    "character": 53
+                },
+                "end": {
+                    "line": 36,
+                    "character": 79
+                }
+            },
+            "rule": "reportArgumentType"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\ast_analysis\\cpp_extractor.py",
+            "severity": "error",
+            "message": "Argument of type \"object\" cannot be assigned to parameter \"ptr\" of type \"_Ptr\" in function \"__init__\"\n  \"object\" is not assignable to \"int\"",
+            "range": {
+                "start": {
+                    "line": 19,
+                    "character": 33
+                },
+                "end": {
+                    "line": 19,
+                    "character": 59
+                }
+            },
+            "rule": "reportArgumentType"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\ast_analysis\\python_extractor.py",
+            "severity": "error",
+            "message": "Argument of type \"object\" cannot be assigned to parameter \"ptr\" of type \"_Ptr\" in function \"__init__\"\n  \"object\" is not assignable to \"int\"",
+            "range": {
+                "start": {
+                    "line": 19,
+                    "character": 33
+                },
+                "end": {
+                    "line": 19,
+                    "character": 62
+                }
+            },
+            "rule": "reportArgumentType"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\rag\\embedding_service.py",
+            "severity": "error",
+            "message": "Argument missing for parameter \"model\"",
+            "range": {
+                "start": {
+                    "line": 63,
+                    "character": 30
+                },
+                "end": {
+                    "line": 63,
+                    "character": 53
+                }
+            },
+            "rule": "reportCallIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\rag\\faiss_manager.py",
+            "severity": "error",
+            "message": "\"ntotal\" is not a known attribute of \"None\"",
+            "range": {
+                "start": {
+                    "line": 46,
+                    "character": 30
+                },
+                "end": {
+                    "line": 46,
+                    "character": 36
+                }
+            },
+            "rule": "reportOptionalMemberAccess"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\rag\\faiss_manager.py",
+            "severity": "error",
+            "message": "\"ntotal\" is not a known attribute of \"None\"",
+            "range": {
+                "start": {
+                    "line": 47,
+                    "character": 61
+                },
+                "end": {
+                    "line": 47,
+                    "character": 67
+                }
+            },
+            "rule": "reportOptionalMemberAccess"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\rag\\faiss_manager.py",
+            "severity": "error",
+            "message": "\"ntotal\" is not a known attribute of \"None\"",
+            "range": {
+                "start": {
+                    "line": 50,
+                    "character": 70
+                },
+                "end": {
+                    "line": 50,
+                    "character": 76
+                }
+            },
+            "rule": "reportOptionalMemberAccess"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\rag\\faiss_manager.py",
+            "severity": "error",
+            "message": "Argument missing for parameter \"x\"",
+            "range": {
+                "start": {
+                    "line": 98,
+                    "character": 8
+                },
+                "end": {
+                    "line": 98,
+                    "character": 31
+                }
+            },
+            "rule": "reportCallIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\rag\\faiss_manager.py",
+            "severity": "error",
+            "message": "Arguments missing for parameters \"k\", \"distances\", \"labels\"",
+            "range": {
+                "start": {
+                    "line": 119,
+                    "character": 15
+                },
+                "end": {
+                    "line": 119,
+                    "character": 71
+                }
+            },
+            "rule": "reportCallIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\routers\\autocomplete.py",
+            "severity": "error",
+            "message": "No parameter named \"language\"",
+            "range": {
+                "start": {
+                    "line": 34,
+                    "character": 8
+                },
+                "end": {
+                    "line": 34,
+                    "character": 16
+                }
+            },
+            "rule": "reportCallIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\routers\\git_router.py",
+            "severity": "error",
+            "message": "Cannot access attribute \"stream_generate\" for class \"OllamaService\"\n  Attribute \"stream_generate\" is unknown",
+            "range": {
+                "start": {
+                    "line": 19,
+                    "character": 30
+                },
+                "end": {
+                    "line": 19,
+                    "character": 45
+                }
+            },
+            "rule": "reportAttributeAccessIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\routers\\git_router.py",
+            "severity": "error",
+            "message": "Cannot access attribute \"CHAT_MODEL\" for class \"Settings\"\n  Attribute \"CHAT_MODEL\" is unknown",
+            "range": {
+                "start": {
+                    "line": 19,
+                    "character": 55
+                },
+                "end": {
+                    "line": 19,
+                    "character": 65
+                }
+            },
+            "rule": "reportAttributeAccessIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\routers\\rag.py",
+            "severity": "error",
+            "message": "Type \"Unknown | IndexHNSWFlat | None\" is not assignable to return type \"IndexHNSWFlat\"\n  Type \"Unknown | IndexHNSWFlat | None\" is not assignable to type \"IndexHNSWFlat\"\n    \"None\" is not assignable to \"IndexHNSWFlat\"",
+            "range": {
+                "start": {
+                    "line": 53,
+                    "character": 11
+                },
+                "end": {
+                    "line": 53,
+                    "character": 23
+                }
+            },
+            "rule": "reportReturnType"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\routers\\rag.py",
+            "severity": "error",
+            "message": "Argument missing for parameter \"model\"",
+            "range": {
+                "start": {
+                    "line": 183,
+                    "character": 42
+                },
+                "end": {
+                    "line": 183,
+                    "character": 63
+                }
+            },
+            "rule": "reportCallIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\routers\\rag.py",
+            "severity": "error",
+            "message": "Argument missing for parameter \"x\"",
+            "range": {
+                "start": {
+                    "line": 190,
+                    "character": 20
+                },
+                "end": {
+                    "line": 190,
+                    "character": 34
+                }
+            },
+            "rule": "reportCallIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\services\\autocomplete_service.py",
+            "severity": "error",
+            "message": "Cannot access attribute \"language\" for class \"ContextBundle\"\n  Attribute \"language\" is unknown",
+            "range": {
+                "start": {
+                    "line": 55,
+                    "character": 56
+                },
+                "end": {
+                    "line": 55,
+                    "character": 64
+                }
+            },
+            "rule": "reportAttributeAccessIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\services\\autocomplete_service.py",
+            "severity": "error",
+            "message": "Cannot access attribute \"language\" for class \"ContextBundle\"\n  Attribute \"language\" is unknown",
+            "range": {
+                "start": {
+                    "line": 65,
+                    "character": 60
+                },
+                "end": {
+                    "line": 65,
+                    "character": 68
+                }
+            },
+            "rule": "reportAttributeAccessIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\services\\prefetch_worker.py",
+            "severity": "error",
+            "message": "Cannot access attribute \"OLLAMA_URL\" for class \"Settings\"\n  Attribute \"OLLAMA_URL\" is unknown",
+            "range": {
+                "start": {
+                    "line": 38,
+                    "character": 32
+                },
+                "end": {
+                    "line": 38,
+                    "character": 42
+                }
+            },
+            "rule": "reportAttributeAccessIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\services\\prefetch_worker.py",
+            "severity": "error",
+            "message": "Cannot access attribute \"AUTOCOMPLETE_MODEL\" for class \"Settings\"\n  Attribute \"AUTOCOMPLETE_MODEL\" is unknown",
+            "range": {
+                "start": {
+                    "line": 40,
+                    "character": 42
+                },
+                "end": {
+                    "line": 40,
+                    "character": 60
+                }
+            },
+            "rule": "reportAttributeAccessIssue"
+        },
+        {
+            "file": "c:\\Users\\HP\\Downloads\\New folder (5)\\backend\\startup.py",
+            "severity": "error",
+            "message": "\"settings\" is unknown import symbol",
+            "range": {
+                "start": {
+                    "line": 10,
+                    "character": 19
+                },
+                "end": {
+                    "line": 10,
+                    "character": 27
+                }
+            },
+            "rule": "reportAttributeAccessIssue"
+        }
+    ],
+    "summary": {
+        "filesAnalyzed": 50,
+        "errorCount": 21,
+        "warningCount": 0,
+        "informationCount": 0,
+        "timeInSec": 5.79
+    }
+}
+

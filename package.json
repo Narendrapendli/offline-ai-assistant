@@ -1,0 +1,208 @@
+{
+  "name": "vscode-ai-assistant",
+  "displayName": "Offline AI Assistant",
+  "description": "Fully offline AI coding assistant powered by Ollama and DeepSeek-Coder",
+  "version": "1.0.0",
+  "publisher": "local-dev",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Machine Learning",
+    "Other"
+  ],
+  "keywords": [
+    "ai",
+    "copilot",
+    "autocomplete",
+    "offline",
+    "ollama",
+    "deepseek"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "ai-assistant.openChat", "title": "AI: Open Chat Panel", "icon": "$(comment-discussion)" },
+      { "command": "ai-assistant.generate", "title": "AI: Generate Code", "icon": "$(wand)" },
+      { "command": "ai-assistant.indexProject", "title": "AI: Index Workspace for RAG", "icon": "$(database)" },
+      { "command": "ai-assistant.generateDocstring", "title": "AI: Generate Docstring", "category": "AI Assistant" },
+      { "command": "ai-assistant.explainGitDiff", "title": "AI: Explain Git Diff", "category": "AI Assistant" },
+      { "command": "ai-assistant.generateTests", "title": "AI: Generate Tests", "category": "AI Assistant" },
+      { "command": "ai-assistant.openDashboard", "title": "AI: Project Health Dashboard", "category": "AI Assistant" },
+      { "command": "ai-assistant.showHelp", "title": "AI: Show Help", "category": "AI Assistant" },
+      { "command": "ai-assistant.reviewCode", "title": "AI: Review Code", "icon": "$(search-fuzzy)", "category": "AI Assistant" },
+      { "command": "ai-assistant.analyzeAlgorithms", "title": "AI: Analyze Algorithms", "icon": "$(graph-line)", "category": "AI Assistant" },
+      { "command": "ai-assistant.startInterview", "title": "AI: Interview Prep Mode", "category": "AI Assistant" },
+      { "command": "ai-assistant.generateReadme", "title": "AI: Generate README", "category": "AI Assistant" },
+      { "command": "ai-assistant.translateCode", "title": "AI: Translate Code", "category": "AI Assistant" },
+      { "command": "ai-assistant.profileCode", "title": "AI: Profile Performance", "category": "AI Assistant" },
+      { "command": "ai-assistant.myWeaknesses", "title": "AI: My Weaknesses & Exercises", "category": "AI Assistant" },
+      { "command": "ai-assistant.generateFeature", "title": "AI: Generate Complete Feature", "category": "AI Assistant" },
+      { "command": "ai-assistant.suggestPatterns", "title": "AI: Design Pattern Advisor", "category": "AI Assistant" },
+      { "command": "ai-assistant.saveSnippet", "title": "AI: Save Snippet", "category": "AI Assistant" },
+      { "command": "ai-assistant.searchSnippets", "title": "AI: Search Snippets", "category": "AI Assistant" },
+      { "command": "ai-assistant.repoBrain", "title": "AI: Repo-Brain Map", "category": "AI Assistant" },
+      { "command": "ai-assistant.gitTimeMachine", "title": "AI: Git Time Machine", "category": "AI Assistant" },
+      { "command": "ai-assistant.healCode", "title": "AI: Self-Healing Fix", "category": "AI Assistant" },
+      { "command": "ai-assistant.analyzeComplexity", "title": "AI: Analyze Complexity", "category": "AI Assistant" },
+      { "command": "ai-assistant.switchModel", "title": "AI: Switch Model", "icon": "$(settings-gear)", "category": "AI Assistant" },
+      { "command": "ai-assistant.acceptDiff", "title": "Accept Change", "category": "AI Assistant" },
+      { "command": "ai-assistant.rejectDiff", "title": "Reject Change", "category": "AI Assistant" },
+      { "command": "ai-assistant.openSettings", "title": "AI: Open Settings", "category": "AI Assistant" },
+      { "command": "ai-assistant.showHistory", "title": "AI: Chat History", "category": "AI Assistant" },
+      { "command": "ai-assistant.runTerminalCommand", "title": "AI: Run Terminal Command", "category": "AI Assistant" }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ai-assistant",
+          "title": "AI Assistant",
+          "icon": "$(hubot)"
+        }
+      ]
+    },
+    "views": {
+      "ai-assistant": [
+        {
+          "type": "webview",
+          "id": "ai-assistant.chatView",
+          "name": "Chat",
+          "icon": "$(comment-discussion)",
+          "contextualTitle": "AI Chat"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "ai-assistant.contextMenu",
+        "label": "AI Assistant"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "ai-assistant.contextMenu",
+          "when": "editorHasSelection",
+          "group": "ai-assistant@1"
+        }
+      ],
+      "ai-assistant.contextMenu": [
+        { "command": "ai-assistant.reviewCode", "group": "1_analysis@1" },
+        { "command": "ai-assistant.analyzeComplexity", "group": "1_analysis@2" },
+        { "command": "ai-assistant.suggestPatterns", "group": "1_analysis@3" },
+        { "command": "ai-assistant.generateTests", "group": "2_dev@1" },
+        { "command": "ai-assistant.generateDocstring", "group": "2_dev@2" },
+        { "command": "ai-assistant.saveSnippet", "group": "2_dev@3" },
+        { "command": "ai-assistant.healCode", "group": "3_debug@1" }
+      ]
+    },
+    "configuration": {
+      "title": "Offline AI Assistant",
+      "properties": {
+        "aiAssistant.backendUrl": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "description": "FastAPI backend URL"
+        },
+        "aiAssistant.autocomplete.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable inline autocomplete"
+        },
+        "aiAssistant.autocomplete.debounceMs": {
+          "type": "number",
+          "default": 150,
+          "description": "Debounce delay for autocomplete requests (ms)"
+        },
+        "aiAssistant.autocomplete.maxTokens": {
+          "type": "number",
+          "default": 128,
+          "description": "Maximum completion tokens"
+        },
+        "aiAssistant.chat.model": {
+          "type": "string",
+          "default": "deepseek-coder:6.7b",
+          "description": "Model to use for chat"
+        },
+        "aiAssistant.autocomplete.model": {
+          "type": "string",
+          "default": "deepseek-coder:1.3b",
+          "description": "Model to use for autocomplete"
+        },
+        "aiAssistant.model": {
+          "type": "string",
+          "default": "",
+          "description": "Currently active model (overrides chat/autocomplete defaults if set)"
+        },
+        "ai-assistant.chatModel": {
+          "type": "string",
+          "default": "deepseek-coder:6.7b",
+          "description": "The model to use for chat conversations."
+        },
+        "ai-assistant.autocompleteModel": {
+          "type": "string",
+          "default": "deepseek-coder:1.3b",
+          "description": "The model to use for inline completions."
+        },
+        "ai-assistant.temperature": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Creativity of the AI responses (0.0 to 1.0)."
+        },
+        "ai-assistant.maxTokens": {
+          "type": "number",
+          "default": 500,
+          "minimum": 60,
+          "maximum": 2000,
+          "description": "Maximum tokens to generate in one response."
+        },
+        "ai-assistant.contextLines": {
+          "type": "number",
+          "default": 50,
+          "minimum": 10,
+          "maximum": 100,
+          "description": "Number of surrounding lines to include as context."
+        },
+        "ai-assistant.systemPrompt": {
+          "type": "string",
+          "default": "",
+          "description": "Custom system instruction to define the AI's personality."
+        }
+      }
+    },
+    "keybindings": [
+      { "command": "ai-assistant.openChat", "key": "ctrl+alt+l", "mac": "cmd+alt+l", "when": "editorTextFocus" },
+      { "command": "ai-assistant.reviewCode", "key": "ctrl+alt+c", "mac": "cmd+alt+c", "when": "editorTextFocus" },
+      { "command": "ai-assistant.analyzeAlgorithms", "key": "ctrl+alt+a", "mac": "cmd+alt+a", "when": "editorTextFocus" },
+      { "command": "ai-assistant.startInterview", "key": "ctrl+alt+i", "mac": "cmd+alt+i", "when": "editorTextFocus" },
+      { "command": "ai-assistant.saveSnippet", "key": "ctrl+alt+s", "mac": "cmd+alt+s", "when": "editorTextFocus" },
+      { "command": "ai-assistant.translateCode", "key": "ctrl+alt+x", "mac": "cmd+alt+x", "when": "editorTextFocus" },
+      { "command": "ai-assistant.generateFeature", "key": "ctrl+alt+f", "mac": "cmd+alt+f", "when": "editorTextFocus" },
+      { "command": "ai-assistant.repoBrain", "key": "ctrl+alt+r", "mac": "cmd+alt+r", "when": "editorTextFocus" },
+      { "command": "ai-assistant.gitTimeMachine", "key": "ctrl+alt+g", "mac": "cmd+alt+g", "when": "editorTextFocus" },
+      { "command": "ai-assistant.runTerminalCommand", "key": "ctrl+shift+`", "when": "editorTextFocus" }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "package": "npx vsce package",
+    "install-ext": "code --install-extension vscode-ai-assistant-1.0.0.vsix"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.29.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
